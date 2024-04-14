@@ -16,7 +16,9 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                echo 'deploying'
+                echo 'Pulling image and deploying'
+		sh "docker run -P -d timilsinamadhav/python-jenkins:$BUILD_ID'
+		
             }
         }
     }
