@@ -6,9 +6,12 @@ pipeline {
                 sh "docker build -t timilsinamadhav/python-jenkins-$GIT_BRANCH:$BUILD_ID ."
             }
         }
-        stage('Test') { 
+        stage('Push to Dockerhub') { 
             steps {
-                echo 'testing'
+                echo 'Pushing builded image to docker.io'
+		sh "docker push timilsinamadhav/python-jenkins-$GIT_BRANCH:$BUILD_ID"
+		echo "cleaning up image"
+		sh "docker rmi timilsinamadhav/python-jenkins-$GIT_BRANCH:$BUILD_ID"
             }
         }
         stage('Deploy') { 
