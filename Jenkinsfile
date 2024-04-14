@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh "docker build -t timilsinamadhav/python-jenkins$GIT_BRANCH:$BUILD_ID ."
+                sh "docker build -t timilsinamadhav/python-jenkins-$GIT_BRANCH:$BUILD_ID ."
             }
         }
         stage('Test') { 
