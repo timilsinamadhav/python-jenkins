@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh "docker build -t timilsinamadhav/python-jenkins:$BUILD_NUMBER ."
+                sh "docker build -t timilsinamadhav/python-jenkins:$BUILD_TAG ."
             }
         }
         stage('Test') { 
